@@ -13,6 +13,6 @@ public class PropellerRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.forward * 720f * Time.deltaTime);
+        transform.Rotate(Vector3.forward * 3240f * Time.deltaTime);
     }
 }

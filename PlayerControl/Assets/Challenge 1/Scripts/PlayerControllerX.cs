@@ -11,6 +11,7 @@ public class PlayerControllerX : MonoBehaviour
     public float planeRotateSpeed;
     public float planeSpinSpeed;
     Rigidbody rb;
+    public float Health = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -32,5 +33,15 @@ public class PlayerControllerX : MonoBehaviour
         transform.Rotate(Vector3.right, rotationSpeed*verticalInput * Time.deltaTime);
         transform.Rotate(Vector3.up, planeRotateSpeed * horizontalInput * Time.deltaTime);
         transform.Rotate(Vector3.forward, planeSpinSpeed * horizontalInput * Time.deltaTime*-1);
+
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void Damaged()
+    {
+        Health -= 1;
     }
 }

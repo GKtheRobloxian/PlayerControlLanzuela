@@ -12,6 +12,9 @@ public class PlayerControllerX : MonoBehaviour
     public float planeSpinSpeed;
     Rigidbody rb;
     public float Health = 5;
+    float XPosition;
+    float YPosition;
+    float ZPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +23,9 @@ public class PlayerControllerX : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        Vector3 position = new Vector3(XPosition, YPosition, ZPosition);
         // get the user's vertical input
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");

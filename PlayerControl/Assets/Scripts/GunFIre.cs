@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
-public class AnotherPlaneController : MonoBehaviour
+public class GunFIre : MonoBehaviour
 {
-    public Transform target;
-    public float speed;
-    Rigidbody rb;
+    float FireRate = 0.066f;
     public GameObject projectile;
+    Rigidbody rb;
     float rotationOne;
     float rotationTwo;
     float rotationThree;
+    public Transform target;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +20,15 @@ public class AnotherPlaneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.LookAt(target);
         rotationOne = transform.rotation.x;
         rotationTwo = transform.rotation.y;
         rotationThree = transform.rotation.z;
-        Vector3 rotationVector = new Vector3(rotationOne, rotationTwo, rotationThree);
-        transform.LookAt(target);
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        FireRate -= Time.deltaTime;
+        if (FireRate < 0)
+        {
+            Instantiate(projectile, rb.position, Quaternion.Euler(new Vector3(rotationOne, rotationTwo, rotationThree)));
+            FireRate = 0.066f;
+        }
     }
 }

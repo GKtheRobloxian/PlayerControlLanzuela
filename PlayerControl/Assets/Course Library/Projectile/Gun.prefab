@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 515175755739571116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 1.5, z: 0.15}
+  m_LocalScale: {x: 1.08, y: 0.72, z: 1.08}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,7 +97,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2cc7e1bf118e241b6011ba9fcf822d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planeUsing: {fileID: 3876282946820024131, guid: 9a386600b1bcf474ea1fffb1d6a6dc03, type: 3}
+  target: {fileID: 5988652850756398459, guid: 3ee756e7481b160468d78ed4a8552ee0, type: 3}
 --- !u!65 &2276593336611353862
 BoxCollider:
   m_ObjectHideFlags: 0

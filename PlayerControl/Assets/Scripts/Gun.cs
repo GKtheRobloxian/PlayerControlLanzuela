@@ -31,7 +31,7 @@ public class Gun : MonoBehaviour
 
         if (controller != null)
         {
-            controller.Damaged();
+            controller.Damaged(1);
             Destroy(gameObject);
         }
     }

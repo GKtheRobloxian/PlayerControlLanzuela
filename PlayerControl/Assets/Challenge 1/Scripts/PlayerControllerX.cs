@@ -44,8 +44,8 @@ public class PlayerControllerX : MonoBehaviour
         }
     }
 
-    public void Damaged()
+    public void Damaged(float integer)
     {
-        Health -= 1;
+        Health -= integer;
     }
 }

@@ -6,7 +6,10 @@ public class CameraSwitch : MonoBehaviour
 {
     public GameObject CameraOne;
     public GameObject CameraTwo;
-    int Camera = 1;
+    public GameObject CameraThree;
+    public GameObject CameraFour;
+    public int Remainder;
+    public int Camera = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +21,44 @@ public class CameraSwitch : MonoBehaviour
     {
         if (Input.GetKeyDown("q"))
         {
-            Camera = Camera * -1;
-            if (Camera > 0)
+            Camera = Camera + 1;
+            Remainder = Camera % 4;
+            if (Remainder == 1)
             {
                 CameraOne.SetActive(true);
                 CameraTwo.SetActive(false);
+                CameraThree.SetActive(false);
+                CameraFour.SetActive(false);
             }
             else
             {
-                CameraOne.SetActive(false);
-                CameraTwo.SetActive(true);
+                if (Remainder == 2)
+                {
+                    CameraOne.SetActive(false);
+                    CameraTwo.SetActive(true);
+                    CameraThree.SetActive(false);
+                    CameraFour.SetActive(false);
+                }
+                else
+                {
+                    if (Remainder == 3)
+                    {
+                        CameraOne.SetActive(false);
+                        CameraTwo.SetActive(false);
+                        CameraThree.SetActive(true);
+                        CameraFour.SetActive(false);
+                    }
+                    else
+                    {
+                        if (Remainder == 0)
+                        {
+                            CameraOne.SetActive(false);
+                            CameraTwo.SetActive(false);
+                            CameraThree.SetActive(false);
+                            CameraFour.SetActive(true);
+                        }
+                    }
+                }
             }
         }
     }

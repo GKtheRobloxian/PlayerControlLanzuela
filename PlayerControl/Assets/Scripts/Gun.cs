@@ -6,23 +6,18 @@ using UnityEngine.UIElements;
 public class Gun : MonoBehaviour
 {
     Rigidbody rb;
-    float MaxLifetime = 1.5f;
-    public Transform position;
+    GameObject target;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        target = GameObject.FindGameObjectWithTag("Player");
+        transform.LookAt(target.transform);
     }
 
     void Update()
     {
-        transform.LookAt(position);
-        transform.Translate(Vector3.forward * 792.48f*Time.deltaTime);
-        MaxLifetime -= Time.deltaTime;
-        if (MaxLifetime < 0)
-        {
-            Destroy(gameObject);
-        }
+        transform.Translate(Vector3.forward * Time.deltaTime * 762.48f);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,7 +26,7 @@ public class Gun : MonoBehaviour
 
         if (controller != null)
         {
-            controller.Damaged();
+            controller.Damaged(1);
             Destroy(gameObject);
         }
     }

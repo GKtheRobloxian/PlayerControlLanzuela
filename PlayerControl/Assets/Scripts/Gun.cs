@@ -13,6 +13,7 @@ public class Gun : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindGameObjectWithTag("Player");
         transform.LookAt(target.transform);
+        transform.eulerAngles = transform.eulerAngles + Vector3.right * Random.Range(-15.0f, 15.0f) + Vector3.up * Random.Range(-15.0f, 15.0f) + Vector3.forward * (Random.Range(-15.0f, 15.0f));
     }
 
     void Update()

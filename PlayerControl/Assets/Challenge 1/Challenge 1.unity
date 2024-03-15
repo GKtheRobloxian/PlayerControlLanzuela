@@ -1252,6 +1252,10 @@ PrefabInstance:
       value: 343.8823
       objectReference: {fileID: 0}
     - target: {fileID: 5988652849819088545, guid: 3ee756e7481b160468d78ed4a8552ee0, type: 3}
+      propertyPath: Health
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988652849819088545, guid: 3ee756e7481b160468d78ed4a8552ee0, type: 3}
       propertyPath: planeSpinSpeed
       value: 225
       objectReference: {fileID: 0}

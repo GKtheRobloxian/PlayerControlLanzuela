@@ -31,7 +31,7 @@ public class AnotherPlaneController : MonoBehaviour
             rotationTwo = transform.rotation.y;
             rotationThree = transform.rotation.z;
             Vector3 rotationVector = new Vector3(rotationOne, rotationTwo, rotationThree);
-            self.transform.LookAt(target);
+            self.transform.rotation = Quaternion.Slerp(Quaternion.Euler(transform.localEulerAngles), Quaternion.Euler(transform.TransformDirection(target.transform.position - transform.position)), 225 * Time.deltaTime);
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
         if (maxHealth == 0)
